@@ -4,36 +4,77 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PC Paramedic | Affordable Computer Repair</title>
+
+  <!-- Favicon (browser tab icon) -->
+  <link rel="icon" href="logo.png" />
+
   <style>
     :root { --bg:#0b1220; --card:#111b2e; --text:#eaf1ff; --muted:#b7c6e6; --accent:#4ea1ff; }
-    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
     a{color:inherit}
+
     .wrap{max-width:980px;margin:0 auto;padding:22px}
     .nav{display:flex;justify-content:space-between;align-items:center;gap:14px}
-    .brand{font-weight:800;letter-spacing:.3px}
+
+    /* Brand w/ logo */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:.3px;
+    }
+    .brand img{
+      width:40px;
+      height:40px;
+      object-fit:contain;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      padding:6px;
+    }
+
     .pill{display:inline-block;padding:8px 12px;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--muted);font-size:14px}
     .hero{margin-top:18px;background:linear-gradient(135deg, rgba(78,161,255,.25), rgba(17,27,46,.8));
       border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px}
     .hero h1{margin:0 0 8px;font-size:40px}
     .hero p{margin:0 0 18px;color:var(--muted);line-height:1.5}
+
     .btns{display:flex;flex-wrap:wrap;gap:10px}
     .btn{background:var(--accent);color:#07101f;border:none;padding:12px 14px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none}
     .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.18)}
+
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
     .card{background:var(--card);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px}
     .card h3{margin:0 0 8px}
     .card p{margin:0;color:var(--muted);line-height:1.45}
+
     .section{margin-top:18px}
     .section h2{margin:0 0 10px}
     .list{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
+
     .footer{margin:22px 0 10px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-    @media (max-width:800px){ .grid{grid-template-columns:1fr} .hero h1{font-size:32px} }
+
+    /* make anchor jumps land nicely below top edge */
+    html { scroll-behavior:smooth; }
+    .anchor-offset { scroll-margin-top: 18px; }
+
+    @media (max-width:800px){
+      .grid{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="nav">
-      <div class="brand">PC Paramedic</div>
+      <div class="brand">
+        <!-- Logo image file in your repo -->
+        <img src="logo.png" alt="PC Paramedic logo" />
+        <span>PC Paramedic</span>
+      </div>
       <div class="pill">Fast • Affordable • Local</div>
     </div>
 
@@ -44,12 +85,13 @@
         and set up new computers. Honest pricing, clear communication, and quick turnaround.
       </p>
 
-      <!-- CHANGE THESE 3 LINES -->
+      <!-- Buttons now jump to the phone/email sections on the page -->
       <div class="btns">
-        <a class="btn" href="sms:+16363832112">Text Me</a>
-        <a class="btn secondary" href="mailto:liamjones989@outlook.com">Email Me</a>
+        <a class="btn" href="#contact-phone">Call Me</a>
+        <a class="btn secondary" href="#contact-email">Email Me</a>
         <a class="btn secondary" href="#pricing">See Pricing</a>
       </div>
+
       <p style="margin-top:12px;color:var(--muted);font-size:14px">
         Service area: Troy/Saint Louis/Saint Charels Area • Available: After 3PM + weekends
       </p>
@@ -70,12 +112,12 @@
       </div>
     </div>
 
-    <div class="section" id="pricing">
+    <div class="section anchor-offset" id="pricing">
       <h2>Simple Pricing</h2>
       <ul class="list">
         <li><b>Quote</b> FREE</li>
         <li><b>Diagnosis:</b> $15</li>
-        <li><b>House Call Fee:</b> $20-$40 (We drive to you at your convienance)
+        <li><b>House Call Fee:</b> $20-$40 (We drive to you at your convienance)</li>
         <li><b>Tune-up / Speed Fix:</b> $60–$90</li>
         <li><b>Virus Removal:</b> $80–$120</li>
         <li><b>SSD / RAM Upgrade Install:</b> $30-$60 + parts</li>
@@ -104,6 +146,30 @@
         <li>Wi-Fi / printer setup</li>
         <li>Data backup help</li>
       </ul>
+    </div>
+
+    <!-- Contact section with anchors for Call Me / Email Me -->
+    <div class="section">
+      <h2>Contact</h2>
+
+      <div class="card anchor-offset" id="contact-phone" style="margin-top:10px">
+        <h3>Phone</h3>
+        <p>
+          <a href="tel:+16363832112"><b>(636) 383-2112</b></a>
+          <span style="color:var(--muted)"> • Tap to call</span>
+        </p>
+        <p style="margin-top:8px;color:var(--muted)">
+          Prefer texting? <a href="sms:+16363832112"><b>Tap to text</b></a>
+        </p>
+      </div>
+
+      <div class="card anchor-offset" id="contact-email" style="margin-top:12px">
+        <h3>Email</h3>
+        <p>
+          <a href="mailto:liamjones989@outlook.com"><b>liamjones989@outlook.com</b></a>
+          <span style="color:var(--muted)"> • Tap to email</span>
+        </p>
+      </div>
     </div>
 
     <div class="footer">
