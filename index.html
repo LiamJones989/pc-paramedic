@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC Paramedic | Affordable Computer Repair</title>
+  <style>
+    :root { --bg:#0b1220; --card:#111b2e; --text:#eaf1ff; --muted:#b7c6e6; --accent:#4ea1ff; }
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:22px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .brand{font-weight:800;letter-spacing:.3px}
+    .pill{display:inline-block;padding:8px 12px;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--muted);font-size:14px}
+    .hero{margin-top:18px;background:linear-gradient(135deg, rgba(78,161,255,.25), rgba(17,27,46,.8));
+      border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px}
+    .hero h1{margin:0 0 8px;font-size:40px}
+    .hero p{margin:0 0 18px;color:var(--muted);line-height:1.5}
+    .btns{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{background:var(--accent);color:#07101f;border:none;padding:12px 14px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.18)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--muted);line-height:1.45}
+    .section{margin-top:18px}
+    .section h2{margin:0 0 10px}
+    .list{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
+    .footer{margin:22px 0 10px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    @media (max-width:800px){ .grid{grid-template-columns:1fr} .hero h1{font-size:32px} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">PC Paramedic</div>
+      <div class="pill">Fast • Affordable • Local</div>
+    </div>
+
+    <div class="hero">
+      <h1>Computer repair that doesn’t rip you off.</h1>
+      <p>
+        I’m <b>PC Paramedic</b> — I help people fix slow PCs, remove viruses, upgrade parts,
+        and set up new computers. Honest pricing, clear communication, and quick turnaround.
+      </p>
+
+      <!-- CHANGE THESE 3 LINES -->
+      <div class="btns">
+        <a class="btn" href="sms:+1XXXXXXXXXX">Text Me</a>
+        <a class="btn secondary" href="mailto:youremail@example.com">Email Me</a>
+        <a class="btn secondary" href="#pricing">See Pricing</a>
+      </div>
+      <p style="margin-top:12px;color:var(--muted);font-size:14px">
+        Service area: Your City / Area • Available: After school + weekends
+      </p>
+    </div>
+
+    <div class="grid section">
+      <div class="card">
+        <h3>Speed Boost</h3>
+        <p>Cleanups, startup fixes, storage space help, and performance tuning.</p>
+      </div>
+      <div class="card">
+        <h3>Virus / Malware Removal</h3>
+        <p>Remove junk + protect your PC, explain what happened and how to avoid it.</p>
+      </div>
+      <div class="card">
+        <h3>Upgrades & Builds</h3>
+        <p>SSD installs, RAM upgrades, GPU installs, or full PC builds.</p>
+      </div>
+    </div>
+
+    <div class="section" id="pricing">
+      <h2>Simple Pricing</h2>
+      <ul class="list">
+        <li><b>Diagnosis:</b> $15 (waived if you get the repair)</li>
+        <li><b>Tune-up / Speed Fix:</b> $40–$60</li>
+        <li><b>Virus Removal:</b> $60–$90</li>
+        <li><b>SSD / RAM Upgrade Install:</b> $25 + parts</li>
+        <li><b>PC Build Labor:</b> $80–$140</li>
+      </ul>
+      <p style="color:var(--muted)">Exact price depends on the issue. I’ll confirm the price before doing any work.</p>
+    </div>
+
+    <div class="section">
+      <h2>How it works</h2>
+      <ul class="list">
+        <li>You text me what’s wrong + your PC type (laptop/desktop).</li>
+        <li>I give you a quick estimate and we set a meetup/drop-off time.</li>
+        <li>I diagnose it, confirm the price, then fix it.</li>
+        <li>You test it before we’re done.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>What I work on</h2>
+      <ul class="list">
+        <li>Windows PCs (most common)</li>
+        <li>Basic Mac help (setup, cleanup, simple troubleshooting)</li>
+        <li>Wi-Fi / printer setup</li>
+        <li>Data backup help</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> PC Paramedic</div>
+      <div>Built with GitHub Pages</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
