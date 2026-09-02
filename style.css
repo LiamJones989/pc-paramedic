@@ -206,14 +206,15 @@ a{ color: inherit; }
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-  animation: draw-ekg 2.4s ease-out forwards;
+  stroke-dasharray: 620 900;
+  stroke-dashoffset: 1520;
+  animation: draw-ekg 2.4s linear infinite;
   filter: drop-shadow(0 0 6px var(--pulse-dim));
 }
 
 @keyframes draw-ekg{
-  to{ stroke-dashoffset: 0; }
+  0%{ stroke-dashoffset: 1520; }
+  100%{ stroke-dashoffset: 0; }
 }
 
 @media (prefers-reduced-motion: reduce){
