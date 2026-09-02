@@ -1,0 +1,477 @@
+/* ===========================================================
+   PC Paramedic — visual identity
+   Concept: the computer diagnostic readout, styled like a
+   vitals monitor. Dark "on-call at night" background, a
+   vital-sign green for the pulse/line accents, and a warm
+   medic red reserved for the one primary action.
+=========================================================== */
+
+:root{
+  --bg: #0a0f14;
+  --bg-soft: #0d141c;
+  --panel: #111a24;
+  --panel-2: #0d141c;
+  --line: rgba(232,237,242,0.09);
+  --line-strong: rgba(232,237,242,0.16);
+
+  --text: #e8edf2;
+  --muted: #8fa2b3;
+  --muted-2: #6c8092;
+
+  --pulse: #35d68c;
+  --pulse-dim: rgba(53,214,140,0.35);
+  --urgent: #e5473c;
+  --urgent-soft: rgba(229,71,60,0.14);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(53,214,140,0.06), transparent 60%),
+    radial-gradient(ellipse 700px 400px at 100% 0%, rgba(229,71,60,0.05), transparent 60%);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; }
+
+.wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 22px 12px;
+}
+
+.anchor-offset{ scroll-margin-top: 24px; }
+
+/* ---------- NAV ---------- */
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 6px;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.brand img{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 9px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255,255,255,.03);
+  padding: 5px;
+}
+
+.nav-links{
+  display: flex;
+  gap: 22px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.nav-links a{ text-decoration: none; }
+.nav-links a:hover{ color: var(--text); }
+
+.status-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.status-pill .dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pulse);
+  box-shadow: 0 0 0 3px var(--pulse-dim);
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: center;
+  padding: 46px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker{
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--pulse);
+  margin: 0 0 14px;
+}
+
+.hero h1{
+  font-size: 46px;
+  line-height: 1.08;
+  margin: 0 0 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hero-sub{
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 46ch;
+  margin: 0 0 26px;
+}
+
+.btns{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.btn{
+  display: inline-block;
+  padding: 13px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btn-primary{
+  background: var(--urgent);
+  color: #fff6f5;
+}
+.btn-primary:hover{ background: #d13c32; }
+
+.btn-secondary{
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+.btn-secondary:hover{ border-color: var(--pulse-dim); }
+
+.hero-meta{
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted-2);
+  margin: 0;
+}
+
+/* --- EKG monitor graphic --- */
+.hero-monitor{
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 16px 14px;
+}
+
+.ekg{
+  width: 100%;
+  height: 110px;
+  display: block;
+}
+
+.ekg-path{
+  fill: none;
+  stroke: var(--pulse);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: draw-ekg 2.4s ease-out forwards;
+  filter: drop-shadow(0 0 6px var(--pulse-dim));
+}
+
+@keyframes draw-ekg{
+  to{ stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ekg-path{ animation: none; stroke-dashoffset: 0; }
+}
+
+.monitor-readout{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.monitor-readout span{
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--muted-2);
+}
+
+.monitor-readout strong{
+  font-size: 13px;
+  color: var(--pulse);
+  font-weight: 600;
+}
+
+/* ---------- SECTIONS ---------- */
+.section{
+  padding: 42px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:last-of-type{ border-bottom: none; }
+
+.section h2{
+  font-size: 25px;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.section-sub{
+  color: var(--muted);
+  margin: 0 0 22px;
+  font-size: 15px;
+}
+
+/* ---------- SERVICE / GENERIC CARDS ---------- */
+.grid{ display: grid; gap: 14px; }
+.grid-3{ grid-template-columns: repeat(3, 1fr); }
+.grid-2{ grid-template-columns: repeat(2, 1fr); }
+
+.card{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.card h3{
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.card p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+/* ---------- PRICING READOUT ---------- */
+.readout{
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 6px 22px;
+}
+
+.readout-row{
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+}
+
+.readout-row:last-child{ border-bottom: none; }
+
+.readout-row span{ color: var(--text); white-space: nowrap; }
+
+.readout-row i{
+  flex: 1;
+  border-bottom: 1px dotted var(--line-strong);
+  height: 0;
+  margin-bottom: 5px;
+}
+
+.readout-row b{
+  color: var(--muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.readout-row b.free{
+  color: var(--pulse);
+}
+
+.guarantee{
+  margin: 18px 2px 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--pulse);
+}
+
+/* ---------- HOW IT WORKS ---------- */
+.steps{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.steps li{
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-num{
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--pulse);
+}
+
+.steps h4{
+  margin: 2px 0 4px;
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+.steps p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+/* ---------- TAGS ---------- */
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag{
+  padding: 9px 15px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--panel);
+}
+
+/* ---------- REVIEWS ---------- */
+.review-card{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stars{
+  color: var(--pulse);
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.review-body{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.review-author{
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted-2);
+}
+
+/* ---------- CONTACT ---------- */
+.contact-card h3{
+  color: var(--muted);
+  font-size: 13px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.contact-value{
+  margin: 0 0 6px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.contact-value a{ text-decoration: none; }
+.contact-value a:hover{ color: var(--pulse); }
+
+.contact-hint{
+  margin: 0;
+  color: var(--muted-2);
+  font-size: 13.5px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 24px 0 10px;
+  color: var(--muted-2);
+  font-size: 13.5px;
+  font-family: var(--font-mono);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 800px){
+  .hero{ grid-template-columns: 1fr; padding-top: 30px; }
+  .hero h1{ font-size: 34px; }
+  .grid-3{ grid-template-columns: 1fr; }
+  .grid-2{ grid-template-columns: 1fr; }
+  .nav-links{ display: none; }
+  .readout{ padding: 4px 16px; }
+  .readout-row{ flex-wrap: wrap; }
+  .readout-row i{ display: none; }
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+a:focus-visible,
+.btn:focus-visible{
+  outline: 2px solid var(--pulse);
+  outline-offset: 2px;
+}
