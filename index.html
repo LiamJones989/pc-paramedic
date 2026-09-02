@@ -3,182 +3,179 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PC Paramedic | Affordable Computer Repair</title>
+  <title>PC Paramedic | Computer Repair — Troy, St. Louis & St. Charles</title>
+  <meta name="description" content="On-call computer repair for the Troy, St. Louis and St. Charles area. Virus removal, upgrades, tune-ups and full builds. Free quotes, no fix no fee." />
 
-  <!-- Favicon (browser tab icon) -->
   <link rel="icon" href="logo.png" />
 
-  <style>
-    :root { --bg:#0b1220; --card:#111b2e; --text:#eaf1ff; --muted:#b7c6e6; --accent:#4ea1ff; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-    a{color:inherit}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    .wrap{max-width:980px;margin:0 auto;padding:22px}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:14px}
-
-    /* Brand w/ logo */
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      letter-spacing:.3px;
-    }
-    .brand img{
-      width:40px;
-      height:40px;
-      object-fit:contain;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.04);
-      padding:6px;
-    }
-
-    .pill{display:inline-block;padding:8px 12px;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--muted);font-size:14px}
-    .hero{margin-top:18px;background:linear-gradient(135deg, rgba(78,161,255,.25), rgba(17,27,46,.8));
-      border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px}
-    .hero h1{margin:0 0 8px;font-size:40px}
-    .hero p{margin:0 0 18px;color:var(--muted);line-height:1.5}
-
-    .btns{display:flex;flex-wrap:wrap;gap:10px}
-    .btn{background:var(--accent);color:#07101f;border:none;padding:12px 14px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none}
-    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.18)}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px}
-    .card h3{margin:0 0 8px}
-    .card p{margin:0;color:var(--muted);line-height:1.45}
-
-    .section{margin-top:18px}
-    .section h2{margin:0 0 10px}
-    .list{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
-
-    .footer{margin:22px 0 10px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-
-    /* make anchor jumps land nicely below top edge */
-    html { scroll-behavior:smooth; }
-    .anchor-offset { scroll-margin-top: 18px; }
-
-    @media (max-width:800px){
-      .grid{grid-template-columns:1fr}
-      .hero h1{font-size:32px}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+
   <div class="wrap">
-    <div class="nav">
-      <div class="brand">
-        <!-- Logo image file in your repo -->
+
+    <!-- ============ NAV ============ -->
+    <header class="nav">
+      <a class="brand" href="#top">
         <img src="logo.png" alt="PC Paramedic logo" />
         <span>PC Paramedic</span>
-      </div>
-      <div class="pill">Fast • Affordable • Local</div>
-    </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact-phone">Contact</a>
+      </nav>
+      <a class="status-pill" href="#contact-phone">
+        <span class="dot" aria-hidden="true"></span>
+        On call now
+      </a>
+    </header>
 
-    <div class="hero">
-      <h1>Your computer's first responder.</h1>
-      <p>
-        I’m <b>PC Paramedic</b> — I help people fix slow PCs, remove viruses, upgrade parts,
-        and set up new computers. Honest pricing, clear communication, and quick turnaround.
-      </p>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="kicker">Computer repair &amp; house calls</p>
+        <h1>Your computer's<br>first responder.</h1>
+        <p class="hero-sub">
+          Slow laptop, a virus that won't quit, or a build from scratch — I come to you,
+          diagnose the problem straight, and only charge for the fix you actually need.
+        </p>
 
-      <!-- Buttons now jump to the phone/email sections on the page -->
-      <div class="btns">
-        <a class="btn" href="#contact-phone">Call Me</a>
-        <a class="btn secondary" href="#contact-email">Email Me</a>
-        <a class="btn secondary" href="#pricing">See Pricing</a>
+        <div class="btns">
+          <a class="btn btn-primary" href="#contact-phone">Call or text (636) 383-2112</a>
+          <a class="btn btn-secondary" href="#pricing">See pricing</a>
+        </div>
+
+        <p class="hero-meta">
+          Serving Troy · St. Louis · St. Charles &nbsp;—&nbsp; Available after 3PM and weekends
+        </p>
       </div>
 
-      <p style="margin-top:12px;color:var(--muted);font-size:14px">
-        Service area: Troy/Saint Louis/Saint Charels Area • Available: After 3PM + weekends
-      </p>
-    </div>
+      <div class="hero-monitor" aria-hidden="true">
+        <svg class="ekg" viewBox="0 0 480 160" preserveAspectRatio="none">
+          <path class="ekg-path" d="M0,80 L70,80 L95,80 L110,40 L125,130 L140,20 L155,110 L170,80 L210,80 L240,80 L255,60 L270,100 L285,80 L480,80" />
+        </svg>
+        <div class="monitor-readout">
+          <span>STATUS</span>
+          <strong>STABLE</strong>
+        </div>
+      </div>
+    </section>
 
-    <div class="grid section">
-      <div class="card">
-        <h3>Speed Boost</h3>
-        <p>Cleanups, startup fixes, storage space help, and performance tuning.</p>
+    <!-- ============ SERVICES ============ -->
+    <section class="section">
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Speed boost</h3>
+          <p>Cleanups, startup fixes, freeing up storage, and general performance tuning.</p>
+        </div>
+        <div class="card">
+          <h3>Virus &amp; malware removal</h3>
+          <p>I clear out the junk, secure your PC, and explain what happened and how to avoid it next time.</p>
+        </div>
+        <div class="card">
+          <h3>Upgrades &amp; builds</h3>
+          <p>SSD installs, RAM upgrades, GPU swaps, part replacement, or a full PC build from the ground up.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Virus / Malware Removal</h3>
-        <p>Remove junk + protect your PC, explain what happened and how to avoid it.</p>
-      </div>
-      <div class="card">
-        <h3>Upgrades & Builds</h3>
-        <p>SSD installs, RAM upgrades, GPU installs, full PC builds, or part replacement.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="section anchor-offset" id="pricing">
-      <h2>Simple Pricing</h2>
-      <ul class="list">
-        <li><b>Quote</b> FREE</li>
-        <li><b>Diagnosis:</b> $15</li>
-        <li><b>House Call Fee:</b> $20-$40 (We drive to you at your convienance)</li>
-        <li><b>Tune-up / Speed Fix:</b> $60–$90</li>
-        <li><b>Virus Removal:</b> $80–$120</li>
-        <li><b>SSD / RAM Upgrade Install:</b> $30-$60 + parts</li>
-        <li><b>PC Cleaning (dust removal, fans, thermal check):</b> $40-$70</li>
-        <li><b>Part Replacement Labor:</b> $60-$120 + parts</li>
-        <li><b>FULL PC Build Labor:</b> $100–$160 + parts</li>
-      </ul>
-      <p style="color:var(--muted)">Exact price depends on the issue. I’ll confirm the price before doing any work.</p>
-    </div>
-      <p style="color:var(--muted)">No fix, no fee, and that's a guarantee!</p>
-    </div>
-  
-    <div class="section">
+    <!-- ============ PRICING ============ -->
+    <section class="section anchor-offset" id="pricing">
+      <h2>Simple pricing</h2>
+      <p class="section-sub">Exact price depends on the issue — I'll always confirm the cost before doing any work.</p>
+
+      <div class="readout">
+        <div class="readout-row"><span>Quote</span><i></i><b class="free">Free</b></div>
+        <div class="readout-row"><span>Diagnosis</span><i></i><b>$15</b></div>
+        <div class="readout-row"><span>House call fee</span><i></i><b>$20–$40</b></div>
+        <div class="readout-row"><span>Tune-up / speed fix</span><i></i><b>$60–$90</b></div>
+        <div class="readout-row"><span>Virus removal</span><i></i><b>$80–$120</b></div>
+        <div class="readout-row"><span>SSD / RAM upgrade install</span><i></i><b>$30–$60 + parts</b></div>
+        <div class="readout-row"><span>PC cleaning (dust, fans, thermal check)</span><i></i><b>$40–$70</b></div>
+        <div class="readout-row"><span>Part replacement labor</span><i></i><b>$60–$120 + parts</b></div>
+        <div class="readout-row"><span>Full PC build labor</span><i></i><b>$100–$160 + parts</b></div>
+      </div>
+
+      <p class="guarantee">No fix, no fee — that's a guarantee.</p>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section">
       <h2>How it works</h2>
-      <ul class="list">
-        <li>You text me what’s wrong + your PC type (laptop/desktop).</li>
-        <li>I give you a quick estimate and we set a meetup/drop-off time.</li>
-        <li>I diagnose it, confirm the price, then fix it.</li>
-        <li>You test it before we’re done.</li>
-      </ul>
-    </div>
+      <ol class="steps">
+        <li><span class="step-num">1</span><div><h4>Text me the problem</h4><p>Tell me what's wrong and whether it's a laptop or desktop.</p></div></li>
+        <li><span class="step-num">2</span><div><h4>Get a quick estimate</h4><p>We agree on a rough price and set a meetup or drop-off time.</p></div></li>
+        <li><span class="step-num">3</span><div><h4>Diagnosis &amp; confirmation</h4><p>I find the issue and confirm the final price before touching anything.</p></div></li>
+        <li><span class="step-num">4</span><div><h4>You test it</h4><p>We check everything works together before I call it done.</p></div></li>
+      </ol>
+    </section>
 
-    <div class="section">
+    <!-- ============ WHAT I WORK ON ============ -->
+    <section class="section">
       <h2>What I work on</h2>
-      <ul class="list">
-        <li>Windows PCs (most common)</li>
-        <li>Basic Mac help (setup, cleanup, simple troubleshooting)</li>
-        <li>Wi-Fi / printer setup</li>
-        <li>Data backup help</li>
-      </ul>
-    </div>
+      <div class="tags">
+        <span class="tag">Windows PCs</span>
+        <span class="tag">Basic Mac help</span>
+        <span class="tag">Wi-Fi &amp; printer setup</span>
+        <span class="tag">Data backup</span>
+      </div>
+    </section>
 
-    <!-- Contact section with anchors for Call Me / Email Me -->
-    <div class="section">
+    <!-- ============ REVIEWS ============ -->
+    <section class="section anchor-offset" id="reviews">
+      <h2>What customers say</h2>
+      <p class="section-sub">Real feedback from real repairs.</p>
+
+      <div class="grid grid-3 reviews-grid">
+        <article class="review-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-body">INPUT REVIEW HERE</p>
+          <p class="review-author">— Customer Name</p>
+        </article>
+
+        <article class="review-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-body">INPUT REVIEW HERE</p>
+          <p class="review-author">— Customer Name</p>
+        </article>
+
+        <article class="review-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-body">INPUT REVIEW HERE</p>
+          <p class="review-author">— Customer Name</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section">
       <h2>Contact</h2>
-
-      <div class="card anchor-offset" id="contact-phone" style="margin-top:10px">
-        <h3>Phone</h3>
-        <p>
-          <a href="tel:+16363832112"><b>(636) 383-2112</b></a>
-          <span style="color:var(--muted)"> • Text Me Here!</span>
-        </p>
+      <div class="grid grid-2">
+        <div class="card contact-card anchor-offset" id="contact-phone">
+          <h3>Phone</h3>
+          <p class="contact-value"><a href="tel:+16363832112">(636) 383-2112</a></p>
+          <p class="contact-hint">Text me here — usually the fastest reply.</p>
+        </div>
+        <div class="card contact-card anchor-offset" id="contact-email">
+          <h3>Email</h3>
+          <p class="contact-value"><a href="mailto:liamjones989@outlook.com">liamjones989@outlook.com</a></p>
+          <p class="contact-hint">Good for details, photos, or scheduling ahead.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="card anchor-offset" id="contact-email" style="margin-top:12px">
-        <h3>Email</h3>
-        <p>
-          <a href="mailto:liamjones989@outlook.com"><b>liamjones989@outlook.com</b></a>
-          <span style="color:var(--muted)"> • Email Me Here!</span>
-        </p>
-      </div>
-    </div>
-
-    <div class="footer">
+    <footer class="footer">
       <div>© <span id="year"></span> PC Paramedic</div>
       <div>Built with GitHub Pages</div>
-    </div>
+    </footer>
+
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
